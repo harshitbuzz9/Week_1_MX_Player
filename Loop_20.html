@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Loop through till 20</title>
+    </head>
+    <body>
+        <p>For this I will be taking some random elements</p>
+    </body>
+    <script>
+        var Numbers=new Array(23,1,0,56,3,4,6,8,12,60,79,31,56,105,331,33,11,22,641,5399);
+        var i=0;
+        var StoreValue=[];
+        var temp=0;
+        while(i<Numbers.length){
+            if(Numbers[i]%2!=0){
+                //document.write(Numbers[i]+" ,");
+                StoreValue[temp]=Numbers[i];
+                temp++;
+            }
+             
+            i++;
+        }
+        document.write(StoreValue);
+    </script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>Task and Index</head>
+    <body>
+        
+    </body>
+    <script>
+        var TaskClass = {
+                arr : [],
+                index : 0,
+            
+            IncludeTask : function(Work){
+                   this.arr.push(Work);       //assigning all task
+                
+                },
+
+           ResignTask : function(index){
+                var getElement=this.arr[index];
+                    document.write("<br/>");
+                    document.write("<br/>");
+                    document.write("Task Removed is-> "+getElement); // removing desire task at index
+                    document.write("<br/>");
+                    document.write("<br/>");
+                    document.write("<br/>");
+                this.arr.splice(index,1);
+                    document.write("Remaining Jobs are :<br/>");
+                    document.write("<br/>");
+                    document.write("<br/>");
+                    document.write(this.arr);
+            }     
+        };
+
+            var x=0;
+                    document.write("<br/>");
+                    document.write("Initial set of Tasks/Jobs are      :  ");
+                
+                    while(x<5){
+                    TaskClass.IncludeTask("task @_   "+x+"     ,   ");
+                    document.write("task @_  :"+x+"  , ")
+                            x++;
+                }
+            
+                TaskClass.ResignTask(3);
+        </script>
+</html>

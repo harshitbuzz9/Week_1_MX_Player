@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        
+    </body>
+    <script>
+        var Bank = {
+            Minimum_age:17,
+            Min_Current_Deposit : 2000,
+            Total_balance : 24000,
+            Naam : "",
+            ID : 0,
+            Debit : function(value){
+                if(value>this.Total_balance){
+                    document.write("In-sufficient Funds");
+                }
+                else {
+                this.Total_balance=this.Total_balance-value;
+                }
+            },
+            CheckBalance : function(){
+                document.write("Bank Amount is  : "+this.Total_balance);
+            },
+            AccountDetails : function(x,y){
+                this.Naam=x;
+                this.ID=y;
+                document.write("Name of person  :"+x);
+                document.write("<br/>");
+                document.write("His Id  :"+y);
+                document.write("<br/>");
+                document.write("Address  :"+ "East Chays mavilla compound");
+                document.write("<br/>");
+                document.write("Civil Score  : 760 " );
+
+            },
+
+            CreateNewAccount : function(age_,Current_Deposit_,name_){
+                if(age_<this.Minimum_age || Current_Deposit_<=this.Min_Current_Deposit){
+                    
+                    document.write("Unable to proceed, SORRY!!");
+
+                }
+                else
+                {
+                    document.write("Account created");
+                    document.write("<br/>");
+                    this.Total_balance=Current_Deposit_;
+                    this.Naam=name_;
+                    document.write("Current Deposit is :"+this.Total_balance);
+                    document.write("<br/>");
+                    document.write("Thank you for joining");
+
+                }
+            },
+
+        };
+
+        var selectOptin=4;
+        var name="Harshit";
+        var id=986090;
+        DebitAmount=500;
+            switch(selectOptin){
+                case 1:{
+                    Bank.Debit(DebitAmount);
+                    document.write("You TOOK RS"+DebitAmount+"/ <br/> Has been Debited from your Account ...xxx");
+                    break;
+                }
+                case 2:{
+                    Bank.CheckBalance();
+                    break;
+                }
+                case 3:{
+                    Bank.AccountDetails(name,id);
+                    break;
+                }
+                case 4:{
+                    document.write("Create a new account");
+                    var Current_Deposit=2001;
+                    var age=18;
+                    Bank.CreateNewAccount(age,Current_Deposit,name);
+                    break;
+                }
+                default:{
+                    document.write("<br/>");
+                    document.write("<br/>");
+                    document.write("Default is:<br/>");
+                    
+                }
+            }
+        
+
+    </script>
+</html>
