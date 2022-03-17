@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <p><input type="text" id="1" placeholder="Enter Ammount"/></p>
+            <p><button onclick="withdrawal()">Withdrawal</button></p>
+            <br>
+        </div>
+        <div>
+            <p><input type="text" id="2" placeholder="Put Money"/></p>
+            <p><button onclick="putM()">Check Balance</button></p>
+        <br>
+        </div> 
+        <div> 
+            <h3>Create New Account</h3> 
+            <p><input type="text" id="3" placeholder="Enter Name"/></p>
+            <p><input type="text" id="email" placeholder="Enter email"/></p>
+            <p><input type="text" id="Amount" placeholder="Enter ammount"/></p>
+            <p><button onclick="createv()">Submmit</button></p> 
+        </div>
+        
+        
+    </body>
+    <script>
+            var Total_savings=200;
+            function withdrawal(){
+                var  Withdrawal= document.getElementById("1").value;
+                Withdrawal=Withdrawal*1;
+                Total_savings=Total_savings-Withdrawal;
+                if(Withdrawal>Total_savings){
+                    document.write("Insufficient funds");  
+                }else{
+                    document.write("Balance :"+Total_savings);    
+                }
+                
+            }
+            function putM(){
+                var Credits=document.getElementById("2").value;
+                Credits=Credits*1;
+                Total_savings = Total_savings+Credits;
+                document.write("Balance :"+Total_savings);   
+            }
+            function createv(){
+                var Name=document.getElementById("3").value;
+                var emailP=document.getElementById("email").value;
+                var Cash=document.getElementById("Amount").value;
+                Total_savings=Cash;
+                if(Total_savings<2000){
+                    document.write("Unable to make account");
+                }else{
+                    document.write("Done");
+                    document.write("<br/>");
+                    document.write("Account Details : HBFC<br/>");
+                    document.write("Email  :"+emailP+"<br/>");
+                    document.write("Name  :"+Name);
+                }
+            } 
+
+    </script>
+</html>
