@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
     <head>
     </head>
@@ -20,6 +20,10 @@
             <p><input type="text" id="Amount" placeholder="Enter ammount"/></p>
             <p><button onclick="createv()">Submmit</button></p> 
         </div>
+        <div> 
+            <h3>Delete Account</h3> 
+            <p><button onclick="deleteData()">Submmit</button></p> 
+        </div>
         
         
     </body>
@@ -28,10 +32,12 @@
             function withdrawal(){
                 var  Withdrawal= document.getElementById("1").value;
                 Withdrawal=Withdrawal*1;
-                Total_savings=Total_savings-Withdrawal;
+                 
                 if(Withdrawal>Total_savings){
+                     
                     document.write("Insufficient funds");  
                 }else{
+                    Total_savings=Total_savings-Withdrawal;
                     document.write("Balance :"+Total_savings);    
                 }
                 
@@ -46,6 +52,31 @@
                 var Name=document.getElementById("3").value;
                 var emailP=document.getElementById("email").value;
                 var Cash=document.getElementById("Amount").value;
+                var emailPattern=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z]{2,4})+$/;
+                var namePattern=/^[a-zA-Z_]{5,20}$/;
+                var amount=/^[0-9]+$/;
+
+                if(emailP==""){
+                    alert("Emali Is empty");
+                }else if(!emailPattern.test(emailP)){
+                    alert("Wrong email");
+                }else{
+                    alert("ddone");
+                }
+
+                if(Name==""){
+                    alert("Empty field");
+                }else if(!namePattern.test(Name)){
+                    alert("Invalid Name");
+                }else{
+                    alert("valid Name");
+                }
+
+                if(!amount.test(Cash)){
+                    alert("Invalid number");
+                }else{
+                    alert("valid Cash");
+                }
                 Total_savings=Cash;
                 if(Total_savings<2000){
                     document.write("Unable to make account");
@@ -57,6 +88,9 @@
                     document.write("Name  :"+Name);
                 }
             } 
-
+           function deleteData(){
+                Total_savings=0;
+                document.write("Data Erased");
+            }
     </script>
 </html>
